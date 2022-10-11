@@ -1,7 +1,7 @@
 {
   "name": "megasaa",
   "version": "1.0.0",
-  "description": "Kolme sää havaintoa yhdestä paikasta",
+  "description": "Kaksi sää havaintoa yhdestä paikasta",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
