@@ -2,7 +2,7 @@ const PORT = process.env.PORT || 2600
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
-const { response } = require('express')
+const { response, json } = require('express')
 const app = express()
 
 let yrData = [];
@@ -24,11 +24,12 @@ app.get('/saayr', (req, res) => {
         $('.now-hero__next-hour-temperature-text', yrhtml).each(function() {
         const yrAste = $(this).text()
         Number(yrAste)
-        console.log(typeof Number(yrAste));
+        //console.log(typeof Number(yrAste));
         yrData.push({
             yrAste
-        }).save
+        })
     })
+
     res.json(yrData)
     }).catch(err => (err))
     })
@@ -43,7 +44,7 @@ app.get('/saayr', (req, res) => {
             $('.current', forecahtml).each(function() {
                 const forecaAste = $(this).text()
                 Number(forecaAste)
-                console.log(typeof Number(forecaAste));
+                //console.log(typeof Number(forecaAste));
                 forecaData.push({
                     forecaAste
                 })
